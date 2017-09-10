@@ -8,6 +8,7 @@ import javax.swing.JOptionPane;
    Author: Ryan Stefan
    File(s):  NumericTypes.java
    Course:   CPS 176 - Fall 2017
+   Date: 9.9.2017
    Purpose:  This program demonstrates how numeric types and operators behave in Java.
 */
 
@@ -41,16 +42,18 @@ public class NumericTypes
       double radius; //Arithmetic radius
       double volume; //Volume of a sphere
 
+      System.out.println(); // To leave a blank line
+
       // Find an arithmetic average.
       average = ((double)(SCORE1 + SCORE2)) / NUMBER;
       output = SCORE1 + " and " + SCORE2 +
-               " have an average of " + average;
+               " have an average of " + average + ".";
       System.out.println(output);
 
       // Convert Fahrenheit temperature to Celsius.
       fToC = (5.0 / 9.0) * (BOILING_IN_F - 32);
-      output = BOILING_IN_F + " in Fahrenheit is " +
-               fToC + " in Celsius.";
+      output = BOILING_IN_F + "\u00b0 in Fahrenheit is " +
+               fToC + "\u00b0 in Celsius.";
       System.out.println(output);
       System.out.println();      // To leave a blank line
 
@@ -67,20 +70,20 @@ public class NumericTypes
       fullName = firstName + " " + lastName;
 
       // Print out the user's full name
-      JOptionPane.showMessageDialog(null, fullName);
+      JOptionPane.showMessageDialog(null, "Your name is: " + fullName);
 
       // ADD LINES FOR TASK #3 HERE
       // Get the first character from the user's first name
       firstInitial = firstName.charAt(0);
 
       // Print out the user's first initial
-      System.out.println("First initial: " + firstInitial);
+      System.out.println("First initial, " + firstInitial + ".");
 
       // Convert the user's full name to uppercase
       fullName = fullName.toUpperCase();
 
       // Print out the user's full name in uppercase
-      System.out.println("Full name in all capital: " + fullName + " with length: " + fullName.length());
+      System.out.println("Full name in all capital, " + fullName + ", with length, " + fullName.length() + ".");
 
       System.out.println();      // To leave a blank line
 
@@ -99,6 +102,8 @@ public class NumericTypes
 
       // Print out the volume
       System.out.println("The volume of the sphere is: " + volume);
+
+      System.out.println(); // To leave a blank line
 
       System.exit(0);
     }
