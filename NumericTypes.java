@@ -23,8 +23,8 @@ public class NumericTypes
       final int NUMBER = 2 ;        // Number of scores
       final int SCORE1 = 100;       // First test score
       final int SCORE2 = 95;        // Second test score
-      final int BOILING_IN_F = 212; // Boiling temperature
-      int fToC;                     // Temperature Celsius
+      final double BOILING_IN_F = 212; // Boiling temperature
+      double fToC;                     // Temperature Celsius
       double average;               // Arithmetic average
       String output;                // Line of output
 
@@ -37,10 +37,9 @@ public class NumericTypes
       char firstInitial; // User's first initial
 
       // TASK #4 declare variables used here
-      double sphereDiameter; // User's diameter of a sphere
+      double diameter; // User's diameter of a sphere
       double radius; //Arithmetic radius
       double volume; //Volume of a sphere
-      double pi = 3.14159265359;
 
       // Find an arithmetic average.
       average = ((double)(SCORE1 + SCORE2)) / NUMBER;
@@ -49,7 +48,7 @@ public class NumericTypes
       System.out.println(output);
 
       // Convert Fahrenheit temperature to Celsius.
-      fToC = 5/9 * (BOILING_IN_F - 32);
+      fToC = (5.0 / 9.0) * (BOILING_IN_F - 32);
       output = BOILING_IN_F + " in Fahrenheit is " +
                fToC + " in Celsius.";
       System.out.println(output);
@@ -57,24 +56,18 @@ public class NumericTypes
 
       // ADD LINES FOR TASK #2 HERE
       // Prompt the user for first name
-      System.out.println("Enter your first name: ");
-
-      // Read the user's first name
-      firstName = keyboard.nextLine();
+      firstName =
+            JOptionPane.showInputDialog("What is your first name? ");
 
       // Prompt the user for last name
-      System.out.println("Enter your last name: ");
-
-      // Read the user's last name
-      lastName = keyboard.nextLine();
+      lastName =
+            JOptionPane.showInputDialog("What is your last name? ");
 
       // Concatenate the user's first and last names
       fullName = firstName + " " + lastName;
 
       // Print out the user's full name
-      System.out.println(fullName + " has " + fullName.length()+ " characters");
-
-      System.out.println();      // To leave a blank line
+      JOptionPane.showMessageDialog(null, fullName);
 
       // ADD LINES FOR TASK #3 HERE
       // Get the first character from the user's first name
@@ -82,11 +75,12 @@ public class NumericTypes
 
       // Print out the user's first initial
       System.out.println("First initial: " + firstInitial);
+
       // Convert the user's full name to uppercase
       fullName = fullName.toUpperCase();
 
       // Print out the user's full name in uppercase
-      System.out.println("Full name in all capital: " + fullName);
+      System.out.println("Full name in all capital: " + fullName + " with length: " + fullName.length());
 
       System.out.println();      // To leave a blank line
 
@@ -95,15 +89,17 @@ public class NumericTypes
       System.out.println("Enter the diameter of a sphere: ");
 
       // Read the diameter
-      sphereDiameter = keyboard.nextDouble();
+      diameter = keyboard.nextDouble();
 
       // Calculate the radius
-      radius = sphereDiameter / 2;
+      radius = diameter / 2;
 
       // Calculate the volume
-      volume = ( 4.0 / 3.0 ) * pi * Math.pow( radius, 3 );
+      volume = ( 4.0 / 3.0 ) * Math.PI * Math.pow( radius, 3 );
 
       // Print out the volume
       System.out.println("The volume of the sphere is: " + volume);
+
+      System.exit(0);
     }
 }
